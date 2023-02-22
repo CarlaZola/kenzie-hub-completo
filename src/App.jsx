@@ -1,6 +1,6 @@
 // import { useState } from 'react'
-import RoutesMain from "./routes"
-import Global from "./styles/globalStyle"
+import RoutesMain from "./routes";
+import Global from "./styles/globalStyle";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <Global />
       <RoutesMain />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
