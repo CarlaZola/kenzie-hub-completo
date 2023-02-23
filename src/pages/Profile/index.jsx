@@ -6,6 +6,7 @@ import ModalDelete from "../../components/Modal/ModalDelete";
 import ModalUpdate from "../../components/Modal/ModalUpdate";
 import { TechContext } from "../../providers/TechContext";
 import { UserContext } from "../../providers/UserContext";
+import Home from "./profile";
 
 const Profile = () => {
   const { user, setUser } = useContext(UserContext);
@@ -21,7 +22,7 @@ const Profile = () => {
   }
 
   return (
-    <>
+    <Home>
       <header>
         <h1>Kenzie Hub</h1>
         <button type="button" onClick={() => exitProfile()}>
@@ -39,7 +40,7 @@ const Profile = () => {
       {deletingTech ? <ModalDelete /> : null}
 
       <ListTechs />
-    </>
+    </Home>
   );
 };
 

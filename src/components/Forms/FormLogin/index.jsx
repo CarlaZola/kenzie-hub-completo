@@ -2,9 +2,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../../providers/UserContext";
+import Button from "../../../styles/button";
 import { schemaLogin } from "../../../utils/schema";
 import Input from "../Input";
 import InputPassword from "../InputPassword";
+import StyledLoginForm from "./formLogin";
 
 const FormLogin = () => {
   const { userLogin } = useContext(UserContext);
@@ -24,7 +26,7 @@ const FormLogin = () => {
     reset();
   };
   return (
-    <form onSubmit={handleSubmit(submitLogin)}>
+    <StyledLoginForm onSubmit={handleSubmit(submitLogin)}>
       <Input
         label="Email"
         id="email"
@@ -45,8 +47,8 @@ const FormLogin = () => {
         button={true}
       />
 
-      <button type="submit">Entrar</button>
-    </form>
+      <Button type="submit">Entrar</Button>
+    </StyledLoginForm>
   );
 };
 

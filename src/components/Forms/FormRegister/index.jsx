@@ -6,6 +6,8 @@ import Select from "../Select";
 import { UserContext } from "../../../providers/UserContext";
 import { schemaRegister } from "../../../utils/schema";
 import InputPassword from "../InputPassword";
+import StyledFormRegister from "./formRegister";
+import Button from "../../../styles/button";
 
 const FormRegister = () => {
   const { userRegister } = useContext(UserContext);
@@ -41,7 +43,7 @@ const FormRegister = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(submitNewUser)}>
+    <StyledFormRegister onSubmit={handleSubmit(submitNewUser)}>
       <Input
         label="Nome"
         placeholder="Digite aqui seu nome"
@@ -113,8 +115,8 @@ const FormRegister = () => {
         array={courseModule}
       />
 
-      <button type="submit">Cadastrar</button>
-    </form>
+      <Button type="submit">Cadastrar</Button>
+    </StyledFormRegister>
   );
 };
 

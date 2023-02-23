@@ -1,10 +1,11 @@
 import { forwardRef } from "react"
+import StyledSelect from "./seletc"
 
 const Select = ({type, name, label, id, placeholder, error, array, ...rest}, ref) => {
     
     
     return(
-        <fieldset>
+        <StyledSelect>
             <label htmlFor={id}>{label}</label>
             <select name={name} id={id} placeholder={placeholder} {...rest} ref={ref}>
                 <option value="">Selecione o módulo</option>
@@ -15,7 +16,7 @@ const Select = ({type, name, label, id, placeholder, error, array, ...rest}, ref
                 }
             </select>
             {error ? <p>{error}</p> : null}
-        </fieldset>
+        </StyledSelect>
     )
 }
  

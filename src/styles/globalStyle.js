@@ -14,7 +14,9 @@ const Global = createGlobalStyle`
         --color-alert-error: #E83F5B;
 
         --font1: 1rem;
-        --font2: .75rem;
+        --font2: 1.125rem;
+        --font3: .75rem;
+       
     }
 
     body{

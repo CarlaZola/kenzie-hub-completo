@@ -1,5 +1,6 @@
 import { forwardRef, useRef, useState } from "react"
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
+import StyledFieldsetPassword from "./inputPassword";
 
 const InputPassword = ({type, name, label, id, placeholder, button, error, hiddenOrShowPass, ...rest}, ref) => {
 
@@ -19,7 +20,7 @@ const InputPassword = ({type, name, label, id, placeholder, button, error, hidde
     }
 
     return(
-        <fieldset>
+        <StyledFieldsetPassword>
             <label htmlFor={id}>{label}</label>
             <div className="contentInput" ref={showPassword}>
                 <input
@@ -40,7 +41,8 @@ const InputPassword = ({type, name, label, id, placeholder, button, error, hidde
                 </button>
                 ) : null}
             </div>
-        </fieldset>
+            {error  ? <p>{error}</p> : null}
+        </StyledFieldsetPassword>
     )
 }
 
