@@ -50,7 +50,7 @@ const TechProvider = ({ children }) => {
         hideProgressBar: true,
         autoClose: 1000,
       });
-      setTechs([...techs, response.data]);
+      setTechs([ ...techs, response.data]);
     } catch (error) {
       console.error(error);
     } finally {
