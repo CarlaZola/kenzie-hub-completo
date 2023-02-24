@@ -7,39 +7,55 @@ import ModalUpdate from "../../components/Modal/ModalUpdate";
 import { TechContext } from "../../providers/TechContext";
 import { UserContext } from "../../providers/UserContext";
 import Home from "./profile";
+import { ToastContainer } from "react-toastify"
 
 const Profile = () => {
   const { user, setUser } = useContext(UserContext);
   const { isOpen, setIsOpen, techs, editingTech, deletingTech } =
     useContext(TechContext);
 
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-    const exitProfile = () => {
-      localStorage.removeItem("@token")
-      setUser(null)
-      navigate("/")
-  }
+  const exitProfile = () => {
+    localStorage.removeItem("@token");
+    setUser(null);
+    navigate("/");
+  };
 
   return (
     <Home>
+      <ToastContainer />
       <header>
-        <h1>Kenzie Hub</h1>
-        <button type="button" onClick={() => exitProfile()}>
-          Sair
-        </button>
+        <div className="boxHeader">
+          <h1>Kenzie Hub</h1>
+          <button type="button" onClick={() => exitProfile()}>
+            Sair
+          </button>
+        </div>
       </header>
-      
-      <p onClick={() => setIsOpen(true)}>+</p>
-      {user.name}
 
-      {isOpen ? <ModalCreate /> : null}
+      <main>
+        <section className="contentProfileInfo">
+          <h2>{user.name}</h2>
+          <p>{user.course_module}</p>
+        </section>
 
-      {editingTech ? <ModalUpdate /> : null}
+        {isOpen ? <ModalCreate /> : null}
 
-      {deletingTech ? <ModalDelete /> : null}
+        {editingTech ? <ModalUpdate /> : null}
 
-      <ListTechs />
+        {deletingTech ? <ModalDelete /> : null}
+
+        <section className="contentTechs">
+          <div className="boxCreateTech">
+            <h2>Tecnologias</h2>
+            <p onClick={() => setIsOpen(true)}>+</p>
+          </div>
+          <div className="boxTechsCard">
+            <ListTechs />
+          </div>
+        </section>
+      </main>
     </Home>
   );
 };

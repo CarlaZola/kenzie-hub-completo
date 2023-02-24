@@ -1,19 +1,20 @@
 import { useContext } from "react"
 import { TechContext } from "../../../providers/TechContext"
+import StyledCardTechs from "./CardTechs"
 
 const CardTech = ({tech}) => {
 
     const { setEditingTech } = useContext(TechContext)
 
     return(
-        <li onClick={() => setEditingTech(tech)}>
+        <StyledCardTechs onClick={() => setEditingTech(tech)}>
             <p>
                 {tech.title}
             </p>
             <p>
                 {tech.status}
             </p>
-        </li>
+        </StyledCardTechs>
     )
 }
 

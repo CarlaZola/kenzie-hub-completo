@@ -54,4 +54,12 @@ const schemaCreateTech = yup.object({
   .required("Selecione o nível")
 }).required()
 
-export {schemaRegister, schemaLogin, schemaCreateTech}
+
+ const schemaUpdateTech = yup.object({
+  status: yup
+  .string()
+  .required("Atualize seu status")
+
+}).required()
+
+export {schemaRegister, schemaLogin, schemaCreateTech, schemaUpdateTech}

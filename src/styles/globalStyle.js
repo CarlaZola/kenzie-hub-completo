@@ -21,6 +21,21 @@ const Global = createGlobalStyle`
 
     body{
         min-height: 100vh;
+
+        ::-webkit-scrollbar {
+            width: 7.5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: var(--color-grey-300);
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-grey-200);
+            border-radius: 4px;
+        }
     }
 
     *{

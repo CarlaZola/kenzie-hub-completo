@@ -12,6 +12,20 @@ const Button = styled.button`
     font-size: var(--font1);
     background-color: var(--color-primary);
 
+    .loading{
+        animation: spinner 1s infinite linear;
+    }
+
+
+    @keyframes spinner{
+        0%{
+            transform: rotate(0);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+
 `
 
 export default Button

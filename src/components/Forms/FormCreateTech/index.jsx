@@ -2,13 +2,16 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { TechContext } from "../../../providers/TechContext";
+import Button from "../../../styles/button";
 import { schemaCreateTech } from "../../../utils/schema";
 import Input from "../Input";
 import Select from "../Select";
+import StyledFormCreateTech from "./formCreateTech";
+import spinner from "../../../assets/spinner.svg"
 
 const FormCreateTech = () => {
 
-    const {techsCreate ,statusOntech, setIsOpen } = useContext(TechContext)
+    const {techsCreate ,statusOntech, setIsOpen, loading } = useContext(TechContext)
 
     const {
         register,
@@ -23,10 +26,10 @@ const FormCreateTech = () => {
     const submitNewTech = (data) => {
         techsCreate(data)
         reset()
-        setIsOpen(false)
+        
     };
     return (
-        <form onSubmit={handleSubmit(submitNewTech)}>
+        <StyledFormCreateTech onSubmit={handleSubmit(submitNewTech)}>
         <Input
             name="title"
             id="title"
@@ -45,8 +48,10 @@ const FormCreateTech = () => {
             error={errors.status?.message}
         />
 
-        <button type="submit">Cadastrar tecnologia</button>
-        </form>
+        <Button className="btnCadaster" type="submit">
+            {loading ? <img src={spinner} className="loading" color="black"/> : "Cadastrar Tecnologia"}
+            </Button>
+        </StyledFormCreateTech>
     );
 };
 

@@ -5,16 +5,22 @@ const Home = styled.div`
     min-height: 100vh;
     width: 100%;
     color: var(--color-grey-0);
-
+	 
     header{
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: .5rem 1rem;
         border-bottom: 1px solid var(--color-grey-300);
         margin-bottom: 1.5rem;
+        padding: 1rem;
 
+        .boxHeader{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 95%;
+            max-width: 50rem;
+            margin: 0 auto;
+
+        }
 
         h1{
             color: var(--color-primary);
@@ -38,29 +44,48 @@ const Home = styled.div`
         flex-direction: column;
         gap : 2rem;
 
-        section {
+        .contentProfileInfo, .contentTechs{
             display: flex;
             flex-direction: column;
+            width: 95%;
+            max-width: 50rem;
+            margin: 0 auto;
 
         }
+
+        .contentProfileInfo{
+            padding: .25rem;
+        }
+
+        .boxCreateTech{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 0 .25rem;
+
+            h2{
+                font-size: var(--font1);
+            }
+            p{
+                background-color: var(--color-grey-300);
+                padding: .5rem .75rem ;
+                border-radius: .25rem;
+                cursor: pointer;
+            }
+        }
+        
     }
 
     @media(min-width: 900px){
-        header{
-            justify-content: space-between;
-            padding: 1rem 8.5rem;
-        }
-
-        main{
-            align-items: center;
-            section{
-            width: 80%;
-            flex-direction: row;
-            justify-content: space-between;
-            }
-        }
-
        
+        main{
+            .contentProfileInfo{
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }        
+        }      
     }
 
 `

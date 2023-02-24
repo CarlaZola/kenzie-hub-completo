@@ -1,22 +1,23 @@
 import { useContext } from "react";
 import { TechContext } from "../../../providers/TechContext";
+import {Modal} from "../../../styles/modal";
 import FormCreateTech from "../../Forms/FormCreateTech";
 
 const ModalCreate = () => {
   const { setIsOpen } = useContext(TechContext);
 
   return (
-    <div className="modal">
-      <div role="dialog">
+    <Modal className="modal">
+      <div role="dialog" className="dialog_div">
         <div className="modalHeader">
           <h2>Cadastrar Tecnologia</h2>
-          <p onClick={() => setIsOpen(false)}>X</p>
+          <p className="btnCloseModal" onClick={() => setIsOpen(false)}>X</p>
         </div>
         <div className="modalBody">
           <FormCreateTech />
         </div>
       </div>
-    </div>
+    </Modal>
   );
 };
 

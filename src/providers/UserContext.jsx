@@ -55,6 +55,7 @@ const UserProvider = ({ children }) => {
         autoClose: 1000,
       });
     } finally {
+      
     }
   };
 
@@ -65,7 +66,10 @@ const UserProvider = ({ children }) => {
       localStorage.setItem("@token", response.data.token);
       navigate("/profile");
     } catch (error) {
-      console.log(error);
+      toast.error("Email ou senha incorretos", {
+        hideProgressBar: true,
+        autoClose: 1000,
+      });
     }
   };
 
